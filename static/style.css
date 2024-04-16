@@ -1,0 +1,90 @@
+/* Estilos generales */
+
+body {
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+    margin: 20px;
+    background-color: #f5f5f5;
+}
+
+h1 {
+    font-size: 24px;
+    margin-top: 0;
+    color: #333;
+}
+
+p {
+    margin-bottom: 10px;
+    color: #666;
+}
+
+/* Estilos del formulario */
+
+form {
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 500px;
+    margin: 0 auto;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    margin-bottom: 10px;
+}
+
+input:focus,
+select:focus {
+    outline: none;
+    border-color: #999;
+}
+
+button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 3px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Estilos específicos de cada campo */
+
+#universidad,
+#carrera {
+    width: 45%;
+}
+
+#anio {
+    width: 30%;
+}
+
+#promedio {
+    width: 20%;
+}
+
+#interes_carrera_ia,
+#uso_escolar_ia,
+#uso_personal_ia,
+#conocimiento_ia,
+#conoces_chatgpt {
+    width: 100%;
+}

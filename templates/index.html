@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>¿Te interesa la IA? Descrubre tu potencial</title>
+</head>
+<body>
+    <h1>¿Te interesa la IA? Descubre tu potencial</h1>
+    <form action="http://127.0.0.1:5000/predict" method="post">
+        <label for="college">Carrera:</label>
+        <select id="college" name="college">
+            <option value="">Selecciona una carrera:</option>
+            <option value="Arts & Media">Artes y afines</option>
+            <option value="Science, Engineering, & Technology">Ciencia, ingeniería y tecnología</option>
+            <option value="Education">Educación</option>
+            <option value="Nursing & Health Care">Enfermería y atención sanitaria</option>
+            <option value="Humanities & Social Sciences">Humanidades y afines</option>
+            <option value="Business">Negocios</option>
+            <option value="Theology">Teología</option>
+        </select><br><br>
+        <label for="personal_ai_use">En una escala del 1 al 5, ¿con qué frecuencia utiliza la IA para uso personal?</label>
+        <input type="number" id="personal_ai_use" name="personal_ai_use" min="1" max="5" required><br><br>
+        <label for="school_ai_use">En una escala del 1 al 5, ¿con qué frecuencia utiliza la IA para tareas relacionadas con la escuela?</label>
+        <input type="number" id="school_ai_use" name="school_ai_use" min="1" max="5" required><br><br>
+        <label for="ai_interest">En una escala del 1 al 5, ¿qué tan interesado está en seguir una carrera en IA?</label>
+        <input type="number" id="ai_interest" name="ai_interest" min="1" max="5" required><br><br>
+        <input type="submit" value="Predecir">
+        <input type="button" value="Limpiar" onclick="clearForm()">
+    </form>
+
+    {% if prediction is not none %}
+    <h2>Tienes un {{ prediction }}% de estudiar una carrera relacionada con IA según esta predicción.</h2>
+    {% endif %}
+
+    <script>
+        function clearForm() {
+            document.getElementById("college").selectedIndex = 0;
+            document.getElementById("personal_ai_use").value = "";
+            document.getElementById("school_ai_use").value = "";
+            document.getElementById("ai_interest").value = "";
+        }
+    </script>
+</body>
+</html>
